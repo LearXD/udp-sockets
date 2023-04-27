@@ -54,5 +54,5 @@ npm install
 </div>
 
 ```bash
-node . <address> <port> [<times>]
+node . <address> <port> [<threads>] [<time>]
 ```
