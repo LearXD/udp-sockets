@@ -1,21 +1,26 @@
-<div align="center">
-    <h1> <b>UDP Sockets Sp4m</b> </h1>
-    <p>*** For educational purposes ***</p>
-</div>
+# UDP Sockets Sp4m
 
+## ⚠️ Disclaimer
 
-> **Warning**
+This tool is for educational purposes only. I am not responsible for any damage you cause. Use at your own risk.
 
-> Buy server protection at: LearXD #1044
+<h2 align="center" > Demo Video 📷 <h2>
 
-<h2 align="center"> Demo Video 📷 <h2>
+<div align="ceneter" >
+<span style="width: 300px">
 
-<div>
 [![My video](https://img.youtube.com/vi/ckRlyBuZ1Xs/0.jpg)](https://www.youtube.com/watch?v=ckRlyBuZ1Xs)
 
-<div align="center">
-    <h2> <b>🔧 Instalation Linux  🐧</b> </h1>
+</span>
 </div>
+
+## 📌 Features
+
+- [x] Multi-threaded
+- [ ] Proxy support
+
+
+## 🔧 Instalation Linux (VPS)  🐧
 
 ```bash
 
@@ -33,9 +38,8 @@ npm install
 
 ```
 
-<div align="center">
-    <h2> <b>🔧 Instalation Termux  📱</b> </h1>
-</div>
+## 🔧 Instalation Termux  📱
+
 
 ```bash
 
@@ -49,9 +53,8 @@ npm install
 
 ```
 
-<div align="center">
-    <h2> <b>🔎 Usage</b> </h1>
-</div>
+
+## 🔎 Usage
 
 ```bash
 node . <address> <port> [<threads>] [<time>]
