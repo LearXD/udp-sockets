@@ -8,7 +8,7 @@ console.log(`
             ███████╗███████╗██║░░██║██║░░██║██╔╝╚██╗██████╔╝
             ╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
             
-                  DDOS Script for Educational Purpose
+                  DDOS Script for penes jsjssk
 `)
 
 const [node, dir, address, port, threads = 4, time = 5] = process.argv;
